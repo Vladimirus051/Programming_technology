@@ -19,9 +19,9 @@ class QuadraticSolver(QWidget):
         self.input_c = QLineEdit(self)
         self.input_c.textChanged.connect(self.update_formulas)
 
-        self.formula_label = QLabel('', self)  # Для отображения уравнения
-        self.discriminant_formula_label = QLabel('', self)  # Для отображения формулы дискриминанта
-        self.update_formulas()  # Инициализация формул
+        self.formula_label = QLabel('', self)
+        self.discriminant_formula_label = QLabel('', self)
+        self.update_formulas()
 
         self.solve_button = QPushButton('Решить', self)
         self.discriminant_label = QLabel('', self)
@@ -36,8 +36,8 @@ class QuadraticSolver(QWidget):
         layout.addWidget(self.input_b)
         layout.addWidget(self.label_c)
         layout.addWidget(self.input_c)
-        layout.addWidget(self.formula_label)  # Добавляем формулу уравнения в макет
-        layout.addWidget(self.discriminant_formula_label)  # Добавляем формулу дискриминанта в макет
+        layout.addWidget(self.formula_label)
+        layout.addWidget(self.discriminant_formula_label)
         layout.addWidget(self.solve_button)
         layout.addWidget(self.discriminant_label)
         layout.addWidget(self.result_label)
@@ -49,13 +49,13 @@ class QuadraticSolver(QWidget):
         b_text = self.input_b.text() or 'b'
         c_text = self.input_c.text() or 'c'
 
-        # Формируем строку с формулой уравнения
+
         formula_text = f"{a_text}x² + {b_text}x + {c_text} = 0"
 
-        # Формируем строку с формулой дискриминанта
+
         discriminant_formula_text = f"D = {b_text}² - 4*{a_text}*{c_text}"
 
-        # Обновляем текст меток
+
         self.formula_label.setText(f"Уравнение: {formula_text}")
         self.discriminant_formula_label.setText(f"Формула дискриминанта: {discriminant_formula_text}")
 
